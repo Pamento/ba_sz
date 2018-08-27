@@ -1,0 +1,72 @@
+page-on-boarding {
+    .header{
+        text-align: center;
+        background: color($colors,  primary-lighter) !important;
+        padding-top: 1rem !important;
+        img{
+            width: 80%;
+            max-width: 400px;
+            padding: 1rem;
+        }
+        .toolbar-background{
+            background: transparent !important;
+        }
+    }
+    ion-slides{
+        top: 0;
+        position: absolute;
+    }
+    img.step{
+        width: 4rem;
+        float: left;
+        margin-top: -2.5rem;
+        margin-left: 1rem;
+    }
+    h1.step-title{
+        float: left;
+        width: calc(100% - 7rem);
+        margin-top: -1rem;
+    }
+    h1{
+        margin: 2rem 0 3rem;
+        span{
+            color: color($colors, pink);
+        }
+    } 
+    .box{
+        background: color($colors, secondary);
+        padding: 2rem;
+        color: color($colors, white);
+        margin: 2rem;
+        clear: both;
+    }
+    .box2{
+        margin: 0;
+        padding: 4rem 0;
+        img{
+            width: 90%;
+            max-width: 420px;
+        }
+    }
+    .kid{
+        width: 25%;
+        max-width: 146px;
+        max-height: 242px;
+        float: right;
+        margin-right: 2rem;
+        padding-top: 1rem;
+    }
+    .docs{
+        padding-top: 2rem;
+        max-width: 550px;
+        width: 90%;
+    }
+    button.start{
+        margin: 2rem !important;
+        width: calc(100% - 4rem) !important;
+        ion-icon{
+            right: 2rem;
+            position: absolute;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+// icomoon
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../assets/fonts/icomoon.eot?vo0tzx');
+    src:  url('../assets/fonts/icomoon.eot?vo0tzx#iefix') format('embedded-opentype'),
+    url('../assets/fonts/icomoon.ttf?vo0tzx') format('truetype'),
+    url('../assets/fonts/icomoon.woff?vo0tzx') format('woff'),
+    url('../assets/fonts/icomoon.svg?vo0tzx#icomoon') format('svg');
+}
+
+@mixin makeIcon($arg, $val) {
+    .ion-ios-#{$arg}:before ,
+    .ion-ios-#{$arg}-circle:before ,
+    .ion-ios-#{$arg}-circle-outline:before ,
+    .ion-ios-#{$arg}-outline:before ,
+    .ion-md-#{$arg}:before ,
+    .ion-md-#{$arg}-circle:before ,
+    .ion-md-#{$arg}-circle-outline:before ,
+    .ion-md-#{$arg}-outline:before  {
+        font-family: "icomoon" !important;
+        content: $val;
+        font-style: normal;
+        font-weight: normal !important;
+        speak: none;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;  
+    }
+}
+
+// Add such entries for each icon:
+@include makeIcon(icon-arrow-left, '\e900');
+@include makeIcon(icon-arrow-right, '\e901');
+@include makeIcon(icon-bubbles, '\e902');
+@include makeIcon(icon-calendar, '\e903');
+@include makeIcon(icon-car-full, '\e904');
+@include makeIcon(icon-car, '\e905');
+@include makeIcon(icon-check, '\e906');
+@include makeIcon(icon-cross, '\e907');
+@include makeIcon(icon-dots, '\e908');
+@include makeIcon(icon-eye, '\e909');
+@include makeIcon(icon-flag, '\e90a');
+@include makeIcon(icon-home, '\e90b');
+@include makeIcon(icon-lock, '\e90c');
+@include makeIcon(icon-long-arrow-right, '\e90d');
+@include makeIcon(icon-luggage, '\e90e');
+@include makeIcon(icon-mail, '\e90f');
+@include makeIcon(icon-map, '\e910');
+@include makeIcon(icon-menu, '\e911');
+@include makeIcon(icon-money, '\e912');
+@include makeIcon(icon-passenger-full, '\e913');
+@include makeIcon(icon-passenger, '\e914');
+@include makeIcon(icon-pencil, '\e915');
+@include makeIcon(icon-people, '\e916');
+@include makeIcon(icon-person, '\e917');
+@include makeIcon(icon-pin, '\e918');
+@include makeIcon(icon-road, '\e919');
+@include makeIcon(icon-shut-down, '\e91a');
+@include makeIcon(icon-time, '\e91b');
+@include makeIcon(icon-web, '\e91c');
+@include makeIcon(icon-work, '\e91d');
+@include makeIcon(icon-parking, '\e91e');

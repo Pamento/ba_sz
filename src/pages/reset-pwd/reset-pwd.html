@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ResetPwdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'auth.pwd' | i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <h1>{{'resetPwd.resetPwdTitle' | i18n}}</h1>
+    <form [formGroup]="form" (ngSubmit)="resetPwd()" novalidate>  
+      
+      <ion-item>
+        <ion-input type="password" formControlName="oldPassword"></ion-input>
+        <ion-label fixed class="label-right">{{ 'auth.pwd'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.oldPassword.errors">
+        <p *ngIf="form.controls.oldPassword.errors?.required">{{ 'auth.pwdRequired'| i18n}}</p>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" formControlName="newPassword"></ion-input>
+        <ion-label fixed class="label-right">{{ 'resetPwd.newPwd'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.newPassword.errors">
+        <p *ngIf="form.controls.newPassword.errors?.required">{{ 'auth.pwdRequired'| i18n}}</p>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" formControlName="newPasswordConfirm"></ion-input>
+        <ion-label fixed class="label-right">{{ 'resetPwd.newPwd'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.newPasswordConfirm.errors">
+        <p *ngIf="form.controls.newPasswordConfirm.errors?.required">{{ 'auth.pwdRequired'| i18n}}</p>
+      </div>
+
+      <div class="error" *ngIf="form.submit && form.apiError">
+        <p>{{ (form.apiError| i18n) || ( ("Technical error"| i18n)+" :"+form.apiError) }}</p>
+      </div>
+      <button class="button-form" ion-button block type="submit" [disabled]='form.submitting'>
+        {{'update' | i18n}}
+      </button>
+    </form>
+  </div>
+</ion-content>

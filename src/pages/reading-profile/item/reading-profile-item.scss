@@ -1,0 +1,26 @@
+@import "../../../app/scss/list";
+@import "../../../app/scss/form";
+page-reading-profile-item {
+    .select-text{
+        font-size: 1.4rem;
+    }
+
+    .bk-btn{
+        ion-icon{
+            right: 90% !important;
+
+        }
+    }
+
+    /* MEDIA QUERIES */
+    @media screen and (min-width: 550px) {
+        .select-text{
+            font-size: 1.8rem;
+        }
+    }
+    .fab-preview{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+}

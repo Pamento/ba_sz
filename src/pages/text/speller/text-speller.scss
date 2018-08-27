@@ -1,0 +1,23 @@
+
+@import "../../../app/scss/form";
+@import "../../../app/scss/list";
+
+page-text-speller {
+    .cke_top{
+        background: color($colors, primary-lighter);
+    }
+    ion-item{
+        border:1px solid color($colors, primary) !important;
+        font-size: 1.4rem;
+        &:last-child{
+            border-bottom: 1px solid color($colors, primary) !important;
+        }
+    }
+
+    /* MEDIA QUERIES */
+    @media screen and (min-width: 550px) {
+        ion-item{
+            font-size: 1.8rem;
+        }
+    }
+}

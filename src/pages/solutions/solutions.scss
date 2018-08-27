@@ -1,0 +1,11 @@
+@import "../../app/scss/list";
+page-solutions {
+    ion-list{
+        ion-item{
+            span{
+                float: right;
+                color: color($colors, secondary);
+            }
+        }
+    }
+}

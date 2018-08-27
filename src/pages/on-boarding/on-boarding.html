@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar class="header">
+    <img src="assets/img/logo.png" />
+  </ion-navbar>
+</ion-header>
+
+<ion-content>  
+  <ion-slides pager>
+      <ion-slide>
+        <h1 [innerHtml]="'onBoarding.title1' | i18n"></h1>
+        <div class="box">
+          <span [innerHtml]="'onBoarding.subTitle1' | i18n"></span>
+        </div>
+        <img src="assets/img/kid.png" class="kid"/>
+      </ion-slide>
+    
+      <ion-slide>
+        <img src="assets/img/1dodys.png" class="step"/>
+        <h1 class="step-title">{{'onBoarding.title2' | i18n}}</h1>
+        <div class="box box2">
+            <img src="assets/img/profil.png" />
+        </div>
+      </ion-slide>
+    
+      <ion-slide>
+          <img src="assets/img/2dodys.png" class="step"/>
+          <h1 class="step-title" [innerHtml]="'onBoarding.title3' | i18n"></h1>
+          <div class="box">
+              {{'onBoarding.subTitle3' | i18n}}
+          </div>
+          <img src="assets/img/docs.png" class="docs" />
+          <button ion-button block (tap)="close()" class="start">
+            {{'onBoarding.start' | i18n}}
+          </button> 
+      </ion-slide>
+    </ion-slides>
+</ion-content>

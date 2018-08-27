@@ -1,0 +1,21 @@
+
+font-style-picker {
+  button{
+    border: 2px color($colors, dark) solid;
+    color: color($colors, dark);
+    float: left;
+    width: calc(33% - .4rem) !important;
+    margin: 0 .2rem !important;
+    background: color($colors, white);
+  }
+  .selected {
+    border-color: color($colors, primary);
+    color: color($colors, primary);
+  }
+  .it{
+    font-style: italic;
+  }
+  .underline{
+    text-decoration: underline;
+  }
+}

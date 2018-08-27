@@ -1,0 +1,12 @@
+color-picker-selector {
+  left: 30px !important;
+  top: 30px !important;
+  height: 70vh !important;
+  width: calc(100% - 60px) !important;
+  .color-btn {
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 50% !important;
+    margin: 1rem;
+  }
+}

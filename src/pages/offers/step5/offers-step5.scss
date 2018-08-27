@@ -1,0 +1,57 @@
+@import "../../../app/scss/form";
+page-offers-step5 {
+    .selected-offer{
+        background:  color($colors, purple);
+        color:color($colors, white);
+        padding: 1rem;
+        border-left: 12px solid color($colors, pink);
+        margin: 1rem 0;
+        line-height: 2;
+        overflow: hidden;
+        &:last-child{
+            margin-bottom: 2rem;
+        }
+        b{
+            font-size: 2.5rem;
+        }
+    }
+    h2{
+        font-size: 1.4rem;
+        color: color($colors, dark);
+        margin-top: 4rem;
+    }
+    .plus{
+        font-size: 3rem;
+        color: color($colors, dark);
+    }
+    .grey-bloc{
+        overflow: hidden;
+    }
+    .grey-bloc, .selected-offer{
+        .lib{
+            width: 60%;
+            float: left;
+            line-height: 3;
+            text-align: left;
+        }
+        .prices{
+            font-size: 2rem;
+            text-align: right;
+            float: left;
+            width: 30%;
+        }
+
+        .final-price{
+            width: 100%;
+            text-align: right;
+            clear: both;
+        }
+    }
+
+    /* MEDIA QUERIES */
+    @media screen and (min-width: 550px) {
+        h2{
+            font-size: 1.9rem;
+        }
+    }
+}

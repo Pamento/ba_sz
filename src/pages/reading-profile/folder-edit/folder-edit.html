@@ -1,0 +1,35 @@
+<!--
+  Generated template for the FolderEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <ion-buttons left>
+        <button ion-button icon-only navPop>
+            <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>{{'readingProfileItem.createFolder' | i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="form-container">
+        <h1>{{ 'folder.edit.newFolder'| i18n}}</h1>
+        <form [formGroup]="form" (ngSubmit)="edit()" novalidate>
+            <ion-item>
+              <ion-input type="text" formControlName="name" [(ngModel)]="folder.name"></ion-input>
+              <ion-label fixed>{{ 'folder.name'| i18n}}</ion-label>
+            </ion-item>
+            <div class="error" *ngIf="form.submit && form.controls.name.errors">
+              <p *ngIf="form.controls.name.errors?.required">{{ 'readingProfileItem.nameRequired'| i18n}}</p>
+            </div>
+            <button class="button-form" ion-button block type="submit" [disabled]='form.submitting'>
+              {{ 'validate'| i18n}} 
+            </button>
+        </form>
+      </div>
+</ion-content>

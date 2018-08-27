@@ -1,0 +1,59 @@
+<!--
+  Generated template for the OffersStep5Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'offers.step5.title' | i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="form-container">
+    <h1>{{ 'offers.step5.subTitle'| i18n}}</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <div class="selected-offer">
+        <label [innerHtml]="getOfferLabel()"></label>
+        <br/>
+        <span>{{'offers.step2.offerSpan' | i18n}}</span>
+      </div>
+      <ng-container *ngIf="extraProfileNumber">
+      <span class="plus">+</span>
+      <div class="selected-offer">
+        <div class="lib">{{'offers.step5.additionalProfile' | i18n}} : {{extraProfileNumber}}</div>
+        <div class="prices">{{getExtraMonthPrice() | price }} €</div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="ocrOffer">
+      <span class="plus">+</span>
+      <div class="selected-offer">
+        <div class="lib">{{ocrOffer.name}}</div>
+        <div class="prices">{{ocrOffer.price}}€</div>
+      </div>
+    </ng-container>
+      <div class="grey-bloc">
+        <div class="lib">{{ 'offers.total'| i18n}}</div>
+        <div class="final-price"><p><b>{{getFirstMonthTotal() | price}}€</b>
+          {{ 'today'| i18n}}, {{ 'then'| i18n}} <b>{{getMonthlyTotal() | price}}€</b> {{ 'offers.byMonth'| i18n}}</p></div>
+      </div>
+
+      <h2>{{'offers.step5.promo' | i18n}}</h2>
+      <ion-item>
+        <ion-label [innerHtml]="'offers.step5.codePromo' | i18n"></ion-label>
+        <ion-input type="text" formControlName="discountCode" [(ngModel)]="discountCode"></ion-input>
+        <a class="button-style">{{'OK' | i18n}}</a>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.orderId.errors">
+        <p *ngIf="form.controls.orderId.errors?.required">{{ 'offers.step5.orderRequired'| i18n}}</p>
+      </div>
+      <button class="button-form" ion-button block type="submit">
+        {{'offers.step5.payCB'|i18n}}
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </button>
+    </form>
+  </div>
+</ion-content>

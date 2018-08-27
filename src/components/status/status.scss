@@ -1,0 +1,27 @@
+.error {
+  .toast-wrapper {
+    background: color($colors, danger);
+  }
+  .toast-message {
+    color: color($colors, white);
+    text-align: center;
+  }
+}
+.warning {
+  .toast-wrapper {
+    background: color($colors, secondary);
+  }
+  .toast-message {
+    color: color($colors, white);
+    text-align: center;
+  }
+}
+.success {
+  .toast-wrapper {
+    background: color($colors, primary);
+  }
+  .toast-message {
+    color: color($colors, white);
+    text-align: center;
+  }
+}

@@ -1,0 +1,3 @@
+<ion-select [(ngModel)]="size" (ngModelChange)="sizeChange()">
+  <ion-option *ngFor="let fontSize of sizes" [value]="fontSize.value">{{fontSize.label}}</ion-option>
+</ion-select>

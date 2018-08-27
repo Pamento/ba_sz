@@ -1,0 +1,4 @@
+<div class="container-ckeditor" [ngClass]="{ 'options' : showOptions }">
+    <ck-editor #ckEditor (blur)="onChange($event)" [config]="ckeConfig" [fullPage]="true"></ck-editor>
+    <ion-icon [name]="getIcon(item)" (tap)="toggleOptions()"></ion-icon>
+</div>

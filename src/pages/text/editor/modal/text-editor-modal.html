@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button icon-only (tap)="close()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{'text.edit'|i18n}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <div #textContent contenteditable="true" [innerHtml]="html | safe:'html'"></div>
+    </ion-item>
+</ion-content>

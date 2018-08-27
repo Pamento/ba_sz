@@ -1,0 +1,44 @@
+ion-content.content {
+  padding: 1rem;
+  .header{
+    text-align: center;
+    background: color($colors, primary-light);
+    color: color($colors, white); 
+    font-weight: bold;
+    overflow: hidden;
+    padding-top: 4rem;
+    .logo{
+      width: 70%;
+      text-align: center;
+      margin: auto;
+      img{
+        margin: auto;
+        max-width:400px;
+      }
+    }
+    .w50{
+      padding-top: 4rem;
+      label, button{
+        width: 100%;
+        font-size:1.6rem;
+        border: 0;
+        border-style: solid;
+        font-family: $common-font-bold;
+        margin-top:2rem;
+        padding-top:1rem;
+      }
+      button{
+        color: color($colors, white);
+        background: transparent;
+        padding-bottom: 1.1rem;
+
+      }
+      label{ 
+        color: color($colors, black); 
+        display: block;
+        padding-bottom: 1rem;
+        background: color($colors, white);
+      }
+    }
+  }  
+}

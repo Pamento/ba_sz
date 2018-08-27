@@ -1,0 +1,329 @@
+{
+	"account": {
+		"welcome": "Bienvenue sur votre compte,",
+		"profileInfos": "Mes informations de comptes",
+		"invoices": "Mes factures",
+		"solutions": "Mes solutions",
+		"users": "Mes utilisateurs",
+		"offers": "Les offres",
+		"logout": "Se déconnecter",
+		"myAccount": "Mon compte"
+	},
+	"address": "Adresse",
+	"adult": {
+		"addAdult": "Ajouter un adulte",
+		"save": {
+			"success": "Sauvegarde de l'adulte effectuée",
+			"error": "Erreur lors de la sauvegarde de l'adulte"
+		}
+	},
+	"auth": {
+		"pwd": "Mot de passe",
+		"pwdRequired": "Veuillez saisir votre mot de passe",
+		"emailRequired": "Veuillez saisir votre email",
+		"emailInvalid": "Veuillez saisir un email valide",
+		"genderRequired": "Veuillez sélectionner un genre",
+		"countryRequired": "Veuillez sélectionner un pays",
+		"emailNotAvailable": "L'email est déjà enregistré"
+	},
+	"backToList": "Retour à la liste",
+	"cancel": "Annuler",
+	"change": "Modifier",
+	"child": {
+		"usernameRequired": "Nom complet obligatoire",
+		"addKid": "Ajouter un enfant",
+		"save": {
+			"success": "Sauvegarde de l'enfant effectuée",
+			"error": "Erreur lors de la sauvegarde de l'enfant"
+		}
+	},
+	"confirm": "Confirmer",
+	"country": "Pays",
+	"email": "Email",
+	"firstname": "Prénom",
+	"folder": {
+		"name": "Nom",
+		"edit": {
+			"success": "Sauvegarde du dossier effectuée",
+			"error": "Erreur lors de la sauvegarde du dossier",
+			"newFolder": "Nouveau dossier"
+		}
+	},
+	"help": {
+		"title": "Besoin d'aide ?"
+	},
+	"invoices": {
+		"title": "Factures",
+		"empty": "Aucune facture",
+		"subtitle": "Téléchargez vos factures",
+		"invoice": "Facture nº"
+	},
+	"lastname": "Nom",
+	"login": {
+		"connect": "Se connecter",
+		"signin": "Créer un compte",
+		"resetPwd": "Mot de passe oublié ?",
+		"success": "Vous êtes connecté(e)",
+		"error": "Identifiants erronés"
+	},
+	"miss": "Madame",
+	"mister": "Monsieur",
+	"next": "Suivant",
+	"offers": {
+		"title": "Nos offres",
+		"subtitle": "Avec Aidodys, optez pour un confort de lecture optimal !",
+		"p1": "Toutes les solutions Aidodys dans un seul abonnement",
+		"p2": "Mises à jour et nouveautés gratuites et automatiques",
+		"p3": "Une équipe à votre écoute et toujours disponible pour vous",
+		"schoolContact": "Contact établissement scolaire",
+		"companyContact": "Contact entreprise",
+		"healthcareContact": "Contact professionnel de santé",
+		"total": "TOTAL",
+		"byMonth": "par mois",
+		"individuals": {
+			"title": "Vous êtes un particulier",
+			"monthly": "Abonnement mensuel à partir de <b>{{price}}€ par mois</b>",
+			"monthlySubtitle": "engagement sur 12 mois",
+			"anual": "Abonnement annuel à partir de <b>{{price}}€ par mois</b>",
+			"anualSubtitle": "soit {{price}}€ par an",
+			"additionalProfils": "Des profils de lecture supplémentaires",
+			"additionalCredits": "Des crédits pour l'OCR supplémentaires"
+		},
+		"profesionals": {
+			"title": "Vous êtes un professionnel",
+			"school": "Un établissement scolaire",
+			"schoolSubtitle1": "Pour vos enseignants",
+			"schoolSubtitle2": "Pour vos élèves",
+			"company": "Une entreprise",
+			"companySubtitle": "Pour vos collaborateurs",
+			"healthcare": "Un professionnel de santé",
+			"healthcareSubtitle": "Devenez ambassadeur"
+		},
+		"unauthorized": "Vous avez déjà une offre en cours de validité",
+		"step2": {
+			"title": "Détail de l'abonnement",
+			"youChose": "Vous avez opté pour",
+			"offer1": "Abonnement de Base Particulier - Mensuel<br/><b>5,95€</b> par mois",
+			"offerSpan": "- 1 profil de lecture inclus - ",
+			"offer2": "Abonnement de Base Particulier - Annuel<br/><b>4,95€</b> par mois",
+			"profileNumber": "Nombre de profils supplémentaires (<b>{{price}}€</b> par mois) :",
+			"profileNumberText": "Ajoutez des profils de lecture supplémentaires",
+			"ocrInvalidValues": "Veuillez saisir un nombre positif valide",
+			"extraProfileNumberRequired": "Veuillez préciser le nombre de profils supplémentaires svp"
+		},
+		"step3": {
+			"title": "Option OCR",
+			"subTitle": "Souhaitez-vous des crédits pour utiliser la Reconnaissance Optique de Caractère ? (OCR)",
+			"OCRDescription": "La Reconnaissance Optique de Caractères (OCR) est une option qui vous permet de transformer des documents à l'origine non modifiables (documents scannés, PDF ou encore des images) en versions modifiables (Word).<br>Le document texte que vous récupérez après le traitement peut ensuite être adapté en illimité.",
+			"OCRRadio1": "OCR 50 pages - 5,00€",
+			"OCRRadio2": "OCR 250 pages - 25,00€",
+			"OCRRadio3": "OCR 500 pages - 50,00€",
+			"OCRRadio4": "OCR 1000 pages - 100,00€",
+			"OCRRadio5": "OCR 2000 pages - 200,00€",
+			"OCRRadio6": "OCR 3000 pages - 300,00€",
+			"OCRRadio0": "Non, merci",
+			"ocrInvalidValues": "Veuillez saisir un nombre positif valide",
+			"ocrRequired": "Veuillez sélectionner votre choix OCR",
+			"ocrInvalidValue": "Veuillez choisir une valeur OCR valide"
+		},
+		"step4": {
+			"title": "Information de facturation",
+			"pay": "Valider et payer"
+		},
+		"step5": {
+			"title": "Récapitulatif",
+			"subTitle": "Récapitulatif de ma commande",
+			"promo": "Vous bénéficiez d'un code promotionnel ou d'activation ?",
+			"codePromo": "Entrez votre code promo ici",
+			"chosePayment": "Choisissez un mode de paiement sécurisé",
+			"payCB": "Payer par Carte Bancaire",
+			"additionalProfile": "Profils supplémentaires",
+			"discount": {
+				"success": "Code de réduction appliqué!",
+				"error": "Code de réduction invalide"
+			},
+			"order": {
+				"create": {
+					"error": "Erreur survenue lors de la création de l'ordre de paiement"
+				}
+			},
+			"orderRequired": "Ordre de paiement requis"
+		}
+	},
+	"OK": "OK!",
+	"onBoarding": {
+		"title1": "La <span>lecture</span> doit être un <span>plaisir</span> pour tous :<br/>Avec <span>AIDODYS</span>, c’est possible !",
+		"subTitle1": "Une lecture confortable et rapide<br/>qui limite la fatigue en 2 étapes simples et rapides.",
+		"title2": "Je crée mon Profil de Lecture en fonction de mes besoins.",
+		"title3": "…Et je l’applique sur tous<br/>mes textes au quotidien.",
+		"subTitle3": "Il me suffit de charger mes documents sur l’application, et mon Profil de Lecture est intégré !",
+		"start": "Commencer"
+	},
+	"optional": "Facultatif",
+	"pay": {
+		"creditCardPayment": "Payer par Carte Bleue"
+	},
+	"phoneNumber": "Téléphone",
+	"prepaidCard": "Nº de carte prépayé",
+	"previous": "Précédent",
+	"profile": {
+		"myProfile": "Mon profil",
+		"myInfos": "Mes infos",
+		"address1": "Adresse personnelle",
+		"address2": "Complément adresse",
+		"postal": "Code postal",
+		"city": "Ville",
+		"phone": "Téléphone",
+		"address1Required": "Veuillez saisir votre adresse",
+		"postalRequired": "Veuillez saisir votre code postal",
+		"cityRequired": "Veuillez saisir votre ville",
+		"phoneRequired": "Veuillez saisir votre téléphone"
+	},
+	"readingProfile": {
+		"readingProfileTitle": "Profil de lecture",
+		"readingProfileSubtitle": "Créez et gérez vos profils de lecture en toute simplicité",
+		"createProfile": "Créer un nouveau profil",
+		"manageProfile": "Gérer mes profils existants",
+		"delete": {
+			"confirm": "Veuillez confirmer la suppression du profil",
+			"success": "Suppression du profil effectuée",
+			"error": "La suppression du profil n'a pas pu être effectuée"
+		}
+	},
+	"readingProfileItem": {
+		"createReadingProfileTitle": "Nouveau profil de lecture",
+		"profileName": "Nom du profil",
+		"fontChoice": "Choix de la police",
+		"typoChoice": "Choix typographiques",
+		"letterDistance": "Distance entre les lettres",
+		"wordDistance": "Distance entre les mots",
+		"interline": "Interligne",
+		"uppercase": "Majuscules",
+		"ponctuation": "Signes de ponctuations",
+		"upperText": "Texte en majuscule",
+		"specifics": "Spécifiques",
+		"cutSyllabe": "Découpage Syllabique",
+		"alternateWordColor": "Mots en couleurs alternées",
+		"vowelsConsonants": "Voyelles / Consonnes",
+		"sounds": "Sons",
+		"letters": "Lettres",
+		"nameRequired": "Veuillez saisir un nom de profil",
+		"nameInvalid": "Veuillez saisir un nom de profil valide",
+		"pickColor": "Choisissez une couleur",
+		"folder": "Dossier",
+		"noFolder": "Pas de dossier",
+		"createFolder": "Créer un nouveau dossier",
+		"save": {
+			"success": "Sauvegarde du profil effectuée",
+			"error": "Erreur lors de la sauvegarde du profil"
+		},
+		"unauthorized": "Crédit insuffisant"
+	},
+	"register": "Enregistrer",
+	"request": {
+		"error": {
+			"validation": "Requête incorrecte",
+			"internal_server_error": "Erreur serveur interne",
+			"timeout": "Temps de chargement dépassé"
+		}
+	},
+	"resetPwd": {
+		"resetPwdTitle": "Changer de mot de passe",
+		"actualPwd": "Mot de passe actuel",
+		"newPwd": "Nouveau mot de passe",
+		"newPwd2": "Retapez votre nouveau mot de passe",
+		"success": "Votre mot de passe a bien été réinitialisé",
+		"error": "Votre mot de passe n'a pas été réinitialisé, une erreur s'est produite"
+	},
+	"signin": {
+		"lastnameRequired": "Veuillez saisir votre nom",
+		"firstnameRequired": "Veuillez saisir votre prénom",
+		"phoneNumberRequired": "Veuillez saisir votre téléphone",
+		"phoneNumberInvalid": "Le format du téléphone n'est pas valide",
+		"completeName": "Nom complet",
+		"completeNameRequired": "Veuillez saisir votre nom complet",
+		"category": "Catégorie",
+		"categoryRequired": "Veuillez choisir une catégorie",
+		"signIn": "S'incrire",
+		"success": "Votre compte a bien été créé",
+		"error": "Compte non créé"
+	},
+	"solutions": {
+		"profiles": "Profils",
+		"quota": "Quota OCR",
+		"userAccounts": "Comptes utilisateurs",
+		"kidAccounts": "Comptes enfants"
+	},
+	"text": {
+		"title": "Adapter mes textes",
+		"edit": "Editer un texte",
+		"new": "Créer un nouveau texte",
+		"load": "Charger un document",
+		"imgLoad": "Charger une image",
+		"spell": "Dicter un texte",
+		"remainingOCR": "Quota OCR restant",
+		"type": "Format",
+		"reloadOcr": "Recharger",
+		"import": {
+			"browse": "Parcourir",
+			"upload": "Envoyer",
+			"success": "Import effectué",
+			"error": "Erreur lors de l'import",
+			"authorizedExtensions": "Types de documents acceptés",
+			"fileRequired": "Veuillez entrer un document à charger",
+			"fileInvalid": "Veuillez entrer un document valide",
+			"unauthorized": "Quota OCR insuffisant",
+			"takePic": "Prendre une photo",
+			"document": "Votre document",
+			"img": {
+				"yourImg": "Votre image",
+				"CAMERA": "Prendre une photo",
+				"PHOTOLIBRARY": "Sélection dans la galerie",
+				"title": "Attention, la photo utilisée doit être parfaitement lisible"
+			},
+			"ocr": {
+				"quotaReached": "Quota OCR épuisé"
+			}
+		},
+		"speller": {
+			"title": "Dicter un texte",
+			"supportedLanguages": "Langues prises en charge",
+			"startListening": "Commencer à lire",
+			"stopListening": "Arrêter de lire",
+			"spelledText": "Vous pouvez ajouter du texte en commençant la lecture",
+			"spelledTexts": "Veuillez choisir un des choix ci-dessous",
+			"none": "Aucun choix",
+			"notAvailable": "Outil dictaphone non disponible"
+		},
+		"adapt": {
+			"modal": "Aperçu du profil"
+		},
+		"save": {
+			"warning": "Veuillez activer l'option de formatage dans l'application Docs (Paramètres/ Activer option Mise en page)"
+		},
+		"open": {
+			"error": "Impossible d'ouvrir le fichier"
+		}
+	},
+	"then": "puis",
+	"today": "aujourd'hui",
+	"update": "Mettre à jour",
+	"user": {
+		"manageUsers": "Gérer les utilisateurs",
+		"adults": "Adultes",
+		"kids": "Enfants",
+		"new": "Nouvel utilisateur",
+		"accessProfil": "Peut accéder à tous les profils",
+		"accessAdmin": "Peut accéder à la gestion des utilisateurs (accès administrateur)",
+		"create": "Créer",
+		"delete": {
+			"confirm": "Veuillez confirmer la suppression de  l'utilisateur?",
+			"success": "Suppression de l'utilisateur effectuée",
+			"error": "La suppression de l'utilisateur n'a pas pu être effectuée"
+		},
+		"countOcrRequired": "Quota OCR obigatoire",
+		"countOcrInvalid": "OCR invalide"
+	},
+	"username": "Adresse électronique",
+	"validate": "Valider"
+}

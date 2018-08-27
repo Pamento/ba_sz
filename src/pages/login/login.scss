@@ -1,0 +1,10 @@
+@import "../../app/scss/form";
+@import "../../app/scss/tabsForm";
+page-login {
+  .reset-btn{
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: color($colors, primary);
+  }
+}

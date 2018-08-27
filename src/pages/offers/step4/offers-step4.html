@@ -1,0 +1,81 @@
+<!--
+  Generated template for the OffersStep4Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'offers.step4.title' | i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <h1>{{'profile.myInfos' | i18n}}</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <ion-item>
+        <ion-input type="text" formControlName="username" [(ngModel)]="invoiceProfile.name"></ion-input>
+        <ion-label fixed>{{ 'signin.completeName'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.username.errors">
+        <p *ngIf="form.controls.username.errors?.required">{{ 'signin.completeNameRequired'| i18n}}</p>
+      </div>
+      <ng-container *ngIf="invoiceProfile.address">
+        <ion-item>
+          <ion-input type="text" formControlName="address1" [(ngModel)]="invoiceProfile.address.address1"></ion-input>
+          <ion-label fixed class="label-right">{{ 'profile.address1'| i18n}}</ion-label>
+        </ion-item>
+        <div class="error" *ngIf="form.submit && form.controls.address1.errors">
+          <p *ngIf="form.controls.address1.errors?.required">{{ 'profile.address1Required'| i18n}}</p>
+        </div>
+
+        <ion-item>
+          <ion-input type="text" formControlName="address2" [(ngModel)]="invoiceProfile.address.address2"></ion-input>
+          <ion-label fixed class="label-right">{{ 'profile.address2'| i18n}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" formControlName="postal" [(ngModel)]="invoiceProfile.address.postal"></ion-input>
+          <ion-label fixed class="label-right">{{ 'profile.postal'| i18n}}</ion-label>
+        </ion-item>
+        <div class="error" *ngIf="form.submit && form.controls.postal.errors">
+          <p *ngIf="form.controls.postal.errors?.required">{{ 'profile.postalRequired'| i18n}}</p>
+        </div>
+
+        <ion-item>
+          <ion-input type="text" formControlName="city" [(ngModel)]="invoiceProfile.address.city"></ion-input>
+          <ion-label fixed class="label-right">{{ 'profile.city'| i18n}}</ion-label>
+        </ion-item>
+        <div class="error" *ngIf="form.submit && form.controls.city.errors">
+          <p *ngIf="form.controls.city.errors?.required">{{ 'profile.cityRequired'| i18n}}</p>
+        </div>
+
+        <ion-item>
+          <ion-label>{{ 'country'| i18n}}</ion-label>
+          <ion-select formControlName="country" [(ngModel)]="invoiceProfile.address.countryId" (ngModelChange)="onCountryChange($event)">
+            <ion-option *ngFor="let country of countryList | unique:'id'" [value]="country.id">{{country.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <div class="error" *ngIf="form.submit && form.controls.country.errors">
+          <p *ngIf="form.controls.country.errors?.required">{{ 'auth.countryRequired'| i18n}}</p>
+        </div>
+
+        <ion-item>
+          <ion-input type="number" formControlName="phone" [(ngModel)]="invoiceProfile.address.phone"></ion-input>
+          <ion-label fixed class="label-right">{{ 'profile.phone'| i18n}}</ion-label>
+        </ion-item>
+
+        <div class="error" *ngIf="form.submit && form.controls.phone.errors">
+          <p *ngIf="form.controls.phone.errors?.required">{{ 'profile.phoneRequired'| i18n}}</p>
+        </div>
+      </ng-container>
+
+      <button class="button-form" ion-button block type="submit" [disabled]='form.submitting'>
+        {{'offers.step4.pay' | i18n}}
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </button>
+    </form>
+  </div>
+</ion-content>

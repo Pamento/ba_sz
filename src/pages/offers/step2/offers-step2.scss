@@ -1,0 +1,31 @@
+@import "../../../app/scss/form";
+page-offers-step2 {
+    .selected-offer{
+        background:  color($colors, purple);
+        color:color($colors, white);
+        padding: 1rem;
+        border-left: 12px solid color($colors, pink);
+        line-height: 2;
+        b{
+            font-size: 2.5rem;
+        }
+    }
+    input{
+        text-align: right;
+    }
+    h2{
+        font-size: 1.4rem;
+        color: color($colors, dark);
+        margin-top: 4rem;
+    }
+    .form-container .button-form{
+        margin-top: 4rem;
+    }
+
+    /* MEDIA QUERIES */
+    @media screen and (min-width: 550px) {
+        h2{
+            font-size: 1.9rem;
+        }
+    }
+}

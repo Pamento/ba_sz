@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+          <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ title || 'Choisissez une couleur'}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <button type="button" *ngFor="let color of colors" (tap)="select(color)" class="color-btn" [ngStyle]="{'background-color': color}"></button>
+  </div>
+</ion-content>

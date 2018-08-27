@@ -1,0 +1,8 @@
+<ng-content></ng-content>
+<ion-select [hidden]="!selectVisible" [(ngModel)]="sourceTypeSelected" (ionChange)="take(sourceTypeSelected)" #select [cancelText]="cancelText|| 'cancel'"
+  interface='action-sheet' [selectOptions]="getCameraOptions().selectOptions">
+  <ion-option *ngFor="let sourceType of getCameraOptions().sourceTypes" value="{{sourceType.value}}">
+    {{ getText(sourceType.text) }}
+  </ion-option>
+</ion-select>
+<input #fileInput type="file" [(ngModel)]="fileObj" hidden/>

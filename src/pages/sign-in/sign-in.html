@@ -1,0 +1,88 @@
+<!--
+  Generated template for the signin page.
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+  <div class="header">
+    <div class="logo">
+        <img src="assets/img/logo.png" />
+    </div>
+    <div class="w50">
+      <button (tap)="forwardTo('LoginPage')">{{ 'login.connect'| i18n}}</button>
+    </div>
+    <div class="w50">   
+      <label>{{ 'login.signin'| i18n}}</label>  
+    </div>
+  </div>
+  <div class="form-container">
+    <h1>{{ 'login.signin'| i18n}}</h1>
+
+    <form [formGroup]="form" (ngSubmit)="signIn()" novalidate>  
+      <ion-list radio-group formControlName="gender" [(ngModel)]="user.greetingId">
+        <ion-item class="no-border w50">
+          <ion-label>{{'miss'| i18n}} </ion-label>
+          <ion-radio value="1000001"></ion-radio>
+        </ion-item>
+        <ion-item class="no-border w50">
+          <ion-label>{{'mister'| i18n}}</ion-label>
+          <ion-radio value="1000000"></ion-radio>
+        </ion-item>
+        <div class="error" *ngIf="form.submit && form.controls.gender.errors">
+          <p *ngIf="form.controls.gender.errors?.required">{{ 'auth.genderRequired'| i18n}}</p>
+        </div>
+      </ion-list>
+      
+      <ion-item>
+        <ion-input type="text" formControlName="username" [(ngModel)]="user.name"></ion-input>
+        <ion-label fixed>{{ 'signin.completeName'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.username.errors">
+        <p *ngIf="form.controls.username.errors?.required">{{ 'signin.completeNameRequired'| i18n}}</p>
+      </div>
+      <ion-item>
+        <ion-input type="text" formControlName="email" [(ngModel)]="user.email"></ion-input>
+        <ion-label fixed>{{ 'email'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.email.errors">
+        <p *ngIf="form.controls.email.errors?.required">{{ 'auth.emailRequired'| i18n}}</p>
+        <p *ngIf="form.controls.email.errors?.email">{{ 'auth.emailInvalid'| i18n}}</p>
+        <p *ngIf="form.controls.email.errors?.emailAvailable">{{ 'auth.emailNotAvailable'| i18n}}</p>
+      </div>
+      <ion-item>
+        <ion-input type="password" formControlName="password" [(ngModel)]="user.password"></ion-input>
+        <ion-label fixed>{{ 'auth.pwd'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.password.errors">
+        <p *ngIf="form.controls.password.errors?.required">{{ 'auth.pwdRequired'| i18n}}</p>
+      </div>
+      
+      <ion-item>
+        <ion-label>{{ 'signin.category'| i18n}}</ion-label>
+        <ion-select formControlName="category" [(ngModel)]="user.groupId">
+          <ion-option *ngFor='let category of categoryList' [value]="category.id">{{category.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.category.errors">
+        <p *ngIf="form.controls.category.errors?.required">{{ 'signin.categoryRequired'| i18n}}</p>
+      </div>
+      
+      <ion-item>
+        <ion-label>{{ 'country'| i18n}}</ion-label>
+        <ion-select formControlName="country" [(ngModel)]="user.countryId">
+          <ion-option *ngFor="let country of countryList | unique:'id'" [value]="country.id">{{country.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.country.errors">
+        <p *ngIf="form.controls.country.errors?.required">{{ 'auth.countryRequired'| i18n}}</p>
+      </div>
+      <div class="error" *ngIf="form.submit && form.apiError">
+        <p>{{ (form.apiError| i18n) || ( ("Technical error"| i18n)+" :"+form.apiError) }}</p>
+      </div>
+      <button class="button-form" ion-button block type="submit" [disabled]='form.submitting'>
+        {{'signin.signIn' | i18n}}
+      </button>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,14 @@
+page-tabs {
+    .tabbar{
+        border-top:1px solid color($colors, light-grey);
+        .tab-button{
+            border-right:1px solid color($colors, light-grey);
+            &:last-child{
+                border-right: none;
+            }
+        }
+        .tab-button[aria-selected=true]{
+            background: color($colors, light-grey);
+        }
+    }
+}

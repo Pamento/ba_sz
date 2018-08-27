@@ -1,0 +1,68 @@
+<!--
+  Generated template for the AdultItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'user.new' | i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <h1>{{'adult.addAdult' | i18n}}</h1>
+
+    <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+
+      <ion-item>
+        <ion-input type="text" formControlName="name" [(ngModel)]="adult.name"></ion-input>
+        <ion-label fixed>{{ 'signin.completeName'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.name.errors">
+        <p *ngIf="form.controls.name.errors?.required">{{ 'signin.completeNameRequired'| i18n}}</p>
+      </div>
+
+      <ion-item>
+        <ion-input type="text" formControlName="username" [(ngModel)]="adult.username"></ion-input> 
+        <ion-label fixed class="label-right">{{ 'username'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.username.errors">
+        <p *ngIf="form.controls.username.errors?.required">{{ 'auth.emailRequired'| i18n}}</p>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" formControlName="password" [(ngModel)]="adult.password"></ion-input>
+        <ion-label fixed class="label-right">{{ 'auth.pwd'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.password.errors">
+        <p *ngIf="form.controls.password.errors?.required">{{ 'auth.pwdRequired'| i18n}}</p>
+      </div>
+
+      <ion-item class="no-border">
+        <ion-label>{{'user.accessProfil' | i18n}}</ion-label>
+        <ion-checkbox formControlName="accessProfiles" [(ngModel)]="adult.accessProfiles"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class="no-border">
+        <ion-label>{{'user.accessAdmin' | i18n}}</ion-label>
+        <ion-checkbox formControlName="accessAdmin" [(ngModel)]="adult.accessAdmin"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" formControlName="countOcr" [(ngModel)]="adult.countOcr"></ion-input>
+        <ion-label fixed class="label-right">{{ 'solutions.quota'| i18n}}</ion-label>
+      </ion-item>
+
+      <div class="error" *ngIf="form.submit && form.controls.countOcr.errors">
+        <p *ngIf="form.controls.countOcr.errors?.required">{{ 'user.countOcrRequired'| i18n}}</p>
+        <p *ngIf="form.controls.countOcr.errors?.number">{{ 'user.countOcrInvalid'| i18n}}</p>
+      </div>
+
+      <button class="button-form" ion-button block type="submit" [disabled]='form.submitting'>
+        {{'user.create' | i18n}}
+      </button>
+    </form>
+  </div>
+</ion-content>

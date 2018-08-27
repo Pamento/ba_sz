@@ -1,0 +1,214 @@
+<!--
+  Generated template for the ReadingProfileItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'readingProfileItem.createReadingProfileTitle'| i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab right middle>
+    <button ion-fab (tap)="onAdaptProfile()" class="fab-preview">
+      <img src="assets/img/logo-small.png" />
+    </button>
+  </ion-fab>
+  <div class="form-list">
+    <form [formGroup]="form" (ngSubmit)="edit()" novalidate>
+      <ion-item class="text-input">
+        <ion-input type="text" formControlName="name" [(ngModel)]="profile.name"></ion-input>
+        <ion-label fixed>{{ 'readingProfileItem.profileName'| i18n}}</ion-label>
+      </ion-item>
+      <div class="error" *ngIf="form.submit && form.controls.name.errors">
+        <p *ngIf="form.controls.name.errors?.required">{{ 'readingProfileItem.nameRequired'| i18n}}</p>
+        <p *ngIf="form.controls.name.errors?.noWhiteSpaces">{{ 'readingProfileItem.nameInvalid'| i18n}}</p>
+      </div>
+
+      <ion-item class="text-input">
+        <ion-label>{{ 'readingProfileItem.folder'| i18n}}</ion-label>
+        <ion-select formControlName="selectedFolder" [(ngModel)]="selectedFolder" (ionChange)="onSelectGroup($event)">
+          <ion-option value="0">{{ 'readingProfileItem.noFolder'| i18n}}</ion-option>
+          <ion-option *ngFor="let folder of folders" [value]="folder.id"> {{folder.name}}</ion-option>
+          <ion-option value="-1">{{ 'readingProfileItem.createFolder'| i18n}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-list radio-group>
+        <ion-list-header>
+          <div class="step-number">1</div>
+          {{ 'readingProfileItem.fontChoice'| i18n}}
+        </ion-list-header>
+        <ng-container *ngFor="let font of getFonts()">
+          <ion-item>
+            <ion-label>{{font.name}}</ion-label>
+            <ion-radio (ionSelect)="selectUniqueProcess(font.id)" [checked]="isProcessSelected(font.id)" [value]='font.id'></ion-radio>
+          </ion-item>
+          <ion-grid *ngIf="isProcessSelected(font.id)">
+            <ion-row>
+              <ion-col>
+                <color-picker [title]="'readingProfileItem.pickColor' | i18n" [color]="getColorCssLine(font.id).param" (change)="onColorCssLineChange(font.id,$event)"></color-picker>
+              </ion-col>
+              <ion-col>
+                <font-size-picker [size]="getFontSizeCssLine(font.id).param" [sizes]="getFontSizes()" (change)="onFontSizeCssLineChange(font.id,$event)"></font-size-picker>
+              </ion-col>
+              <ion-col>
+                <font-style-picker [bold]='getBoldCssLine(font.id).param' [italic]='getItalicCssLine(font.id).param' [underline]='getUnderlineCssLine(font.id).param'
+                  (boldChange)="onBoldCssLineChange(font.id,$event)" (italicChange)="onItalicCssLineChange(font.id,$event)"
+                  (underlineChange)="onUnderlineCssLineChange(font.id,$event)">
+                </font-style-picker>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>
+          <div class="step-number">2</div>
+          {{ 'readingProfileItem.typoChoice'| i18n}}
+        </ion-list-header>
+        <ng-container *ngFor="let typo of getTypos()">
+          <ng-container *ngIf="isValuableTypo(typo.id)">
+            <ion-item>
+              <ion-label>{{typo.name}}</ion-label>
+              <ion-select>
+                <ion-option *ngFor="let typoItem of getTypoChoices(typo.id)" [value]='typoItem.label' (ionSelect)="onSingleProcessChange(typo.id,typoItem.value)"
+                  [selected]='isSingleCssValueSelected(typo.id,typoItem.value)'>{{typoItem.label}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ng-container>
+          <ng-container *ngIf="isStyleableTypo(typo.id)">
+            <ion-item>
+              <ion-label>{{typo.name}}</ion-label>
+              <ion-checkbox (ionChange)="toggleProcess(typo.id)" [checked]="isProcessSelected(typo.id)"></ion-checkbox>
+            </ion-item>
+            <ion-grid *ngIf="isProcessSelected(typo.id)">
+              <ion-row>
+                <ion-col>
+                  <color-picker [title]="'readingProfileItem.pickColor' | i18n" [color]="getColorCssLine(typo.id).param" (change)="onColorCssLineChange(typo.id,$event)"></color-picker>
+                </ion-col>
+                <ion-col>
+                  <font-size-picker [size]="getFontSizeCssLine(typo.id).param" [sizes]="getFontSizes()" (change)="onFontSizeCssLineChange(typo.id,$event)">
+                    >
+                  </font-size-picker>
+                </ion-col>
+                <ion-col>
+                  <font-style-picker [bold]='getBoldCssLine(typo.id).param' [italic]='getItalicCssLine(typo.id).param' [underline]='getUnderlineCssLine(typo.id).param'
+                    (boldChange)="onBoldCssLineChange(typo.id,$event)" (italicChange)="onItalicCssLineChange(typo.id,$event)"
+                    (underlineChange)="onUnderlineCssLineChange(typo.id,$event)">
+                  </font-style-picker>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ng-container>
+          <ng-container *ngIf="isSimpleTypo(typo.id)">
+            <ion-item>
+              <ion-label>{{typo.name}}</ion-label>
+              <ion-checkbox (ionChange)="toggleProcess(typo.id)" [checked]="isProcessSelected(typo.id)"></ion-checkbox>
+            </ion-item>
+          </ng-container>
+        </ng-container>
+      </ion-list>
+
+
+      <ion-list>
+        <ion-list-header>
+          <div class="step-number">3</div>
+          {{ 'readingProfileItem.specifics'| i18n}}
+        </ion-list-header>
+        <ng-container *ngFor="let specific of getSpecifics()">
+          <ion-item>
+            <ion-label>{{specific.name}}</ion-label>
+            <ion-checkbox (ionChange)="toggleProcess(specific.id)" [checked]="isProcessSelected(specific.id)"></ion-checkbox>
+          </ion-item>
+          <ion-grid *ngIf="isProcessSelected(specific.id)">
+            <ion-row>
+              <ion-col>
+                <color-picker [title]="'readingProfileItem.pickColor' | i18n" [color]="getColorCssLine(specific.id,0).param" (change)="onColorCssLineChange(specific.id,$event,0)"></color-picker>
+              </ion-col>
+              <ion-col>
+                <font-style-picker [bold]='getBoldCssLine(specific.id,0).param' [italic]='getItalicCssLine(specific.id,0).param' [underline]='getUnderlineCssLine(specific.id,0).param'
+                  (boldChange)="onBoldCssLineChange(specific.id,$event,0)" (italicChange)="onItalicCssLineChange(specific.id,$event,0)"
+                  (underlineChange)="onUnderlineCssLineChange(specific.id,$event,0)">
+                </font-style-picker>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <color-picker [title]="'readingProfileItem.pickColor' | i18n" [color]="getColorCssLine(specific.id,1).param" (change)="onColorCssLineChange(specific.id,$event,1)"></color-picker>
+              </ion-col>
+              <ion-col>
+                <font-style-picker [bold]='getBoldCssLine(specific.id,1).param' [italic]='getItalicCssLine(specific.id,1).param' [underline]='getUnderlineCssLine(specific.id,1).param'
+                  (boldChange)="onBoldCssLineChange(specific.id,$event,1)" (italicChange)="onItalicCssLineChange(specific.id,$event,1)"
+                  (underlineChange)="onUnderlineCssLineChange(specific.id,$event,1)">
+                </font-style-picker>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>
+          <div class="step-number">4</div>
+          {{ 'readingProfileItem.sounds'| i18n}}
+        </ion-list-header>
+        <ng-container *ngFor="let sound of getSounds()">
+          <ion-item>
+            <ion-label>{{sound.name}}</ion-label>
+            <ion-checkbox (ionChange)="toggleProcess(sound.id)" [checked]="isProcessSelected(sound.id)"></ion-checkbox>
+          </ion-item>
+          <ion-grid *ngIf="isProcessSelected(sound.id)">
+            <ion-row>
+              <ion-col>
+                <color-picker [title]="'readingProfileItem.pickColor' | i18n" [color]="getColorCssLine(sound.id).param" (change)="onColorCssLineChange(sound.id,$event)"></color-picker>
+              </ion-col>
+              <ion-col>
+                <font-style-picker [bold]='getBoldCssLine(sound.id).param' [italic]='getItalicCssLine(sound.id).param' [underline]='getUnderlineCssLine(sound.id).param'
+                  (boldChange)="onBoldCssLineChange(sound.id,$event)" (italicChange)="onItalicCssLineChange(sound.id,$event)"
+                  (underlineChange)="onUnderlineCssLineChange(sound.id,$event)">
+                </font-style-picker>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>
+          <div class="step-number">5</div>
+          {{ 'readingProfileItem.letters'| i18n}}
+        </ion-list-header>
+        <ng-container *ngFor="let letter of getLetters()">
+          <ion-item>
+            <ion-label>{{letter.name}}</ion-label>
+            <ion-checkbox (ionChange)="toggleProcess(letter.id)" [checked]="isProcessSelected(letter.id)"></ion-checkbox>
+          </ion-item>
+          <ion-grid *ngIf="isProcessSelected(letter.id)">
+            <ion-row>
+              <ion-col>
+                <color-picker [title]="'readingProfileItem.pickColor' | i18n" [color]="getColorCssLine(letter.id).param" (change)="onColorCssLineChange(letter.id,$event)"></color-picker>
+              </ion-col>
+              <ion-col>
+                <font-style-picker [bold]='getBoldCssLine(letter.id).param' [italic]='getItalicCssLine(letter.id).param' [underline]='getUnderlineCssLine(letter.id).param'
+                  (boldChange)="onBoldCssLineChange(letter.id,$event)" (italicChange)="onItalicCssLineChange(letter.id,$event)"
+                  (underlineChange)="onUnderlineCssLineChange(letter.id,$event)">
+                </font-style-picker>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+      </ion-list>
+      <button ion-button block type="submit" [disabled]='form.submitting'>
+        {{ 'register'| i18n}}
+      </button>
+      <button class="bk-btn" ion-button block outline icon-left type="button" navPop>
+        {{ 'backToList'| i18n}}
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </form>
+  </div>
+</ion-content>

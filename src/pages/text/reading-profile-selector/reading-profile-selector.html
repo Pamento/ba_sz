@@ -1,0 +1,6 @@
+<ion-item class="text-input">
+  <ion-label>{{ 'readingProfile.readingProfileTitle'| i18n}}</ion-label>
+  <ion-select [(ngModel)]="selectedProfile" (ngModelChange)="onProfileChange($event)">
+    <ion-option *ngFor="let readingProfile of readingProfiles" [value]="readingProfile.id"> {{readingProfile.name}}</ion-option>
+  </ion-select>
+</ion-item>

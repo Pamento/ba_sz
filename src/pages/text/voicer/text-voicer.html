@@ -1,0 +1,8 @@
+<ion-fab right middle *ngIf="text">
+  <button ion-fab (tap)="onTalk()" *ngIf="!isSpeeching">
+    <ion-icon name="ios-mic"></ion-icon>
+  </button>
+  <button ion-fab (tap)="onStop()" *ngIf="isSpeeching">
+    <ion-icon name="ios-square"></ion-icon>
+  </button>
+</ion-fab>

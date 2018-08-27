@@ -1,0 +1,21 @@
+<!--
+  Generated template for the TextCreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'text.edit'|i18n}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="form-container">
+    <reading-profile-selector #profileSelector (onProfileSelected)="onProfileSelected($event)"></reading-profile-selector>
+    <text-editor #textEditor (onTextChange)=onTextChange($event) [html]="text"></text-editor>
+    <text-saver [content]="textEditor.getHtml()" [profile]="profile" (onSave)="onSave($event)" (onSavedContent)="onSavedContent($event) "></text-saver>
+    <text-voicer [text]="textEditor.getText()"></text-voicer>
+  </div>
+</ion-content>

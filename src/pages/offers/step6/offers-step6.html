@@ -1,0 +1,22 @@
+<!--
+  Generated template for the OffersStep6Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{'offers.step5.payCB'|i18n}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <iframe #iframe name="iframe" (load)="onIframeUrlChange($event)" *ngIf="isProcessingPayment()">
+    <form #form method="POST" [action]="getPaymentUrl()" novalidate target="iframe">
+      <input *ngFor="let key of paymentInfo|keys" type="hidden" [name]="key" [value]="paymentInfo[key]" />
+    </form>
+  </iframe>
+</ion-content>

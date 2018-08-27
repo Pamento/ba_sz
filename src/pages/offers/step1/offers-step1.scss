@@ -1,0 +1,19 @@
+@import "../../../app/scss/list";
+page-offers-step1 {
+    .custom-title p{
+        padding-left: 2rem;
+        color: color($colors, secondary);
+    }
+    ion-list{
+        button{
+            color: color($colors, primary);   
+            p{
+                ion-icon{
+                    font-size: 1.5rem !important;  
+                    color: color($colors, grey);    
+                }
+                color: color($colors, grey) !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<!--
+  Generated template for the ReadingProfileItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <img src="assets/img/logo-small.png" />
+    <ion-title>{{ 'readingProfile.readingProfileTitle'| i18n}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="custom-title">
+    <h1>{{ 'readingProfile.readingProfileSubtitle'| i18n}}</h1>
+  </div>
+  <ion-list>
+    <button ion-item (tap)="forwardTo('ReadingProfileItemPage')">
+      <ion-icon name="md-add-circle" item-start></ion-icon>
+      {{ 'readingProfile.createProfile'| i18n}}
+    </button>
+    <ion-item-group>
+      <ion-item-divider color="primary">
+        <ion-icon name="ios-book" item-start></ion-icon>
+        {{ 'readingProfile.manageProfile'| i18n}}
+        <ion-icon name="ios-arrow-down" item-end></ion-icon>
+      </ion-item-divider>
+      <ng-container *ngFor="let item of list">
+        <ng-container *ngIf="!item.leaf">
+          <ion-item-divider class="folder" (tap)="toggleFolder(item)">
+            <ion-icon name="ios-folder" item-start></ion-icon>
+            {{ item.name }}
+            <ion-icon [name]="getFolderIcon(item)" item-end></ion-icon>
+          </ion-item-divider>
+            <ng-container *ngIf="isFolderOpen(item)">
+            <ion-item-sliding *ngFor="let item of item.profiles">
+              <button class="subfolder" ion-item  (tap)="forwardToItem(item)">
+                <ion-icon name="ios-book" item-start></ion-icon>
+                {{ item.name }}
+              </button>
+              <ion-item-options side="right">
+                <button  ion-button color="danger">
+                  <ion-icon name="md-trash" class="white" (tap)="onDeleteProfile(item)"></ion-icon>
+                </button>
+            </ion-item-options>
+            </ion-item-sliding>
+          </ng-container>
+        </ng-container>
+        <ion-item-sliding *ngIf="item.leaf">
+          <button ion-item (tap)="forwardToItem(item)">
+            <ion-icon name="ios-book" item-start></ion-icon>
+            {{ item.name }}
+          </button>
+          <ion-item-options side="right">
+            <button  ion-button color="danger">
+              <ion-icon name="md-trash" class="white" (tap)="onDeleteProfile(item)"></ion-icon>
+            </button>
+        </ion-item-options>
+        </ion-item-sliding>
+      </ng-container>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>
